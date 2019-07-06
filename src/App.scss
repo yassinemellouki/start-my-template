@@ -1,0 +1,27 @@
+$white: #fff;
+$red: #f00;
+
+body {
+  color: $red;
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+
+  > div {
+    width: 100%;
+    height: 100%;
+  }
+
+  .welcome {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+
+    code {
+      font: {
+        size: 3rem;
+      }
+    }
+  }
+}

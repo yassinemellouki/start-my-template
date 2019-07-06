@@ -1,0 +1,16 @@
+body {
+  color: #f00;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff; }
+  body > div {
+    width: 100%;
+    height: 100%; }
+  body .welcome {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center; }
+    body .welcome code {
+      font-size: 3rem; }
+
