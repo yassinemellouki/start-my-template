@@ -5,13 +5,13 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-module.exports = {
+const config = {
   entry: {
     app: './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
   },
   module: {
     rules: [
@@ -43,7 +43,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|ico|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -57,6 +57,15 @@ module.exports = {
     ],
   },
   optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
     minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
   },
   plugins: [
@@ -66,9 +75,9 @@ module.exports = {
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         'theme-color': '#00d8ff',
-        favicon: '/images/favicon.ico',
       },
       minify: {
+        collapsWhitespace: true,
         removeAttributeQuotes: true,
         removeComments: true,
       },
@@ -87,3 +96,5 @@ module.exports = {
     open: true,
   },
 };
+
+module.exports = config;

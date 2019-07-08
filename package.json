@@ -4,7 +4,8 @@
   "description": "Start React App With WebPack",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "npm run clean && webpack --mode production",
+    "clean": "rimraf public",
     "dev": "webpack --mode development",
     "live": "webpack-dev-server",
     "live:server": "nodemon --watch src/ --exec npm run live"
@@ -28,6 +29,7 @@
     "nodemon": "^1.19.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react-svg": "^10.0.10",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
