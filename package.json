@@ -4,9 +4,10 @@
   "description": "Start React App With WebPack",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "live": "webpack-dev-server"
+    "dev": "webpack --mode development",
+    "live": "webpack-dev-server",
+    "live:server": "nodemon --watch src/ --exec npm run live"
   },
   "author": "",
   "license": "ISC",
@@ -18,10 +19,15 @@
     "css-loader": "^3.0.0",
     "eslint": "^6.0.1",
     "eslint-plugin-react": "^7.14.2",
+    "favicons-webpack-plugin": "0.0.9",
+    "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "react-svg": "^10.0.10",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.2",

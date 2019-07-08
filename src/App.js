@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import Welcome from './components/welcome';
 
 class App extends Component {
   render() {
     return (
-      <div className="welcome">
-        <code>React Here!</code>
-      </div>
+      <React.Fragment>
+        <Welcome />
+      </React.Fragment>
     );
   }
 }

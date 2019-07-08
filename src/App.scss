@@ -1,5 +1,4 @@
-$white: #fff;
-$red: #f00;
+@import './style/variables/colors';
 
 body {
   color: $red;
@@ -13,16 +12,5 @@ body {
     height: 100%;
   }
 
-  .welcome {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-
-    code {
-      font: {
-        size: 3rem;
-      }
-    }
-  }
+  @import './style/welcome';
 }
