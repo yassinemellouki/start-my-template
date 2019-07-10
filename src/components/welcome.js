@@ -8,7 +8,7 @@ class Welcome extends Component {
     return (
       <div className="welcome">
         <Geeklife />
-        <code>React Here Gang!</code>
+        <code>React Here Gang!!</code>
         <ReactSVG src={ReactLogo} className="react-logo-container" />
       </div>
     );

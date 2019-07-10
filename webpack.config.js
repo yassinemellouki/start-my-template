@@ -5,13 +5,16 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const config = {
+module.exports = (env, argv) => ({
   entry: {
     app: './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: 'bundle.[contenthash].js',
+    filename:
+      argv.mode === 'production'
+        ? '[name].bundle.[chunkhash].js'
+        : '[name].bundle.[hash].js',
   },
   module: {
     rules: [
@@ -33,6 +36,7 @@ const config = {
       {
         test: /\.scss$/,
         use: [
+          'css-hot-loader',
           {loader: MiniCssExtractPlugin.loader},
           {
             loader: 'css-loader',
@@ -59,7 +63,7 @@ const config = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        vendors: {
+        vendoes: {
           test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
           name: 'vendors',
           chunks: 'all',
@@ -94,7 +98,15 @@ const config = {
   devServer: {
     host: '0.0.0.0',
     open: true,
+    hot: true,
+    overlay: true,
   },
-};
-
-module.exports = config;
+  resolve: {
+    alias:
+      argv.mode === 'development'
+        ? {
+            'react-dom': '@hot-loader/react-dom',
+          }
+        : {},
+  },
+});
