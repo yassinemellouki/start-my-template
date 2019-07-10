@@ -34,7 +34,7 @@ module.exports = (env, argv) => ({
         ],
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           'css-hot-loader',
           {loader: MiniCssExtractPlugin.loader},

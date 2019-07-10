@@ -12,6 +12,7 @@
       size: 3rem;
     }
     padding: 0 1.5rem;
+    color: $red;
   }
 
   .geek-life {
@@ -29,6 +30,7 @@
       0% {
         transform: rotateX(0deg);
       }
+
       100% {
         transform: rotateX(360deg);
       }
@@ -52,6 +54,7 @@
           left: -50rem;
           opacity: 0;
         }
+
         20% {
           opacity: 1;
         }
@@ -116,7 +119,6 @@
   svg {
     margin: auto;
     display: block;
-    padding: 1rem;
 
     .cls-1,
     .cls-2,
@@ -128,19 +130,16 @@
       stroke-dashoffset: -138rem;
       stroke-dasharray: 138rem;
       animation: 3s ease-in forwards;
+      animation-name: draw-line;
     }
+
     .cls-2 {
       stroke-dashoffset: 138rem;
-    }
-    .cls-1,
-    .cls-2,
-    .cls-3 {
-      animation-name: draw-line;
     }
 
     @keyframes draw-line {
       100% {
-        stroke-dashoffset: 0rem;
+        stroke-dashoffset: 0;
       }
     }
   }
