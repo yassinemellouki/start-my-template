@@ -112,7 +112,17 @@
     }
   }
 
-  .react-logo-container {
+  .pack-includes {
+    text-align: center;
+
+    svg {
+      margin: 0 1rem;
+      display: inline-block;
+    }
+  }
+
+  .react-logo-container,
+  .pack-includes {
     flex: 100%;
   }
 
