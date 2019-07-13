@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
+import './js/script';
+import './style.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// import index.html file to trigger live reload
+if (process.env.NODE_ENV === 'development') {
+  require('./index.html');
+}

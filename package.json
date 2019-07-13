@@ -1,35 +1,34 @@
 {
-  "name": "start-my-react-app",
+  "name": "start-my-template",
   "version": "1.0.0",
-  "description": "Start React App With WebPack",
+  "description": "Start My Template With WebPack",
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && webpack --mode production",
     "clean": "rimraf public",
     "dev": "webpack --mode development",
-    "live": "webpack-dev-server"
+    "live:dev": "webpack-dev-server --mode development",
+    "live:prod": "live-server public/"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
-    "@babel/preset-react": "^7.0.0",
-    "@hot-loader/react-dom": "^16.8.6",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "babel-loader": "^8.0.6",
-    "bootstrap": "^4.3.1",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^3.0.0",
     "eslint": "^6.0.1",
-    "eslint-plugin-react": "^7.14.2",
     "favicons-webpack-plugin": "0.0.9",
     "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "react-svg": "^10.0.10",
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -38,12 +37,8 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.5"
+    "bootstrap": "^4.3.1"
   }
 }
